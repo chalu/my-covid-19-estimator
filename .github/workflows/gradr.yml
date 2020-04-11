@@ -6,31 +6,31 @@ on:
     - master
 
 jobs:
-  lint: 
-    name: audit code style
-    runs-on: macos-latest
+  # lint: 
+  #   name: audit code style
+  #   runs-on: macos-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+  #   strategy:
+  #     matrix:
+  #       node-version: [12.x]
 
-    steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout Repo
+  #     uses: actions/checkout@v2
 
-    - name: Prepare Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+  #   - name: Prepare Node
+  #     uses: actions/setup-node@v1
+  #     with:
+  #       node-version: ${{ matrix.node-version }}
 
-    - name: Install Deps
-      run: yarn add eslint@^6.8.0 eslint-plugin-import@^2.20.1 eslint-config-airbnb-base@^14.0.0
+  #   - name: Install Deps
+  #     run: yarn add eslint@^6.8.0 eslint-plugin-import@^2.20.1 eslint-config-airbnb-base@^14.0.0
         
-    - name: Run Audits
-      run: yarn eslint ./src/
+  #   - name: Run Audits
+  #     run: yarn eslint ./src/
 
   ch-1:
-    needs: lint
+    # needs: lint
     name: audit challenge 1
     runs-on: macos-latest
 
